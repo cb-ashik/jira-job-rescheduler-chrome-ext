@@ -1,0 +1,34 @@
+{
+  "name": "Chargebee JIRA Jobs Rescheduler",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Quickly reschedule jobs from JIRA",
+  "homepage_url": "https://chargebee.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "https://mychargebee.atlassian.net/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://mychargebee.atlassian.net/browse/JOBS-*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
